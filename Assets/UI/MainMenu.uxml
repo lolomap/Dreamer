@@ -8,15 +8,30 @@
     <ui:Style src="project://database/Assets/UI/Styles/Base.uss" />
     <ui:Style src="project://database/Assets/UI/Styles/MainMenu.uss" />
 
-    <ui:VisualElement name="main-menu" class="panel-block root center">
+    <ui:VisualElement name="select-mode" class="panel-block root center hidden">
         
-        <ui:Instance name="poetry-mode" template="item-card" class="icon-notebook">
+        <ui:Instance name="poetry-mode" template="item-card">
             <AttributeOverrides element-name="card-text" text="Поэт" />
         </ui:Instance>
         
         <ui:Instance name="lyrics-mode" template="item-card">
             <AttributeOverrides element-name="card-text" text="Писатель" />
         </ui:Instance>
+        
+    </ui:VisualElement>
+    
+    <ui:VisualElement name="select-topic" class="panel-block root center grid">
+        
+        <ui:Instance template="item-card"/>
+        <ui:Instance template="item-card"/>
+        <ui:Instance template="item-card"/>
+        <ui:Instance template="item-card"/>
+        <ui:Instance template="item-card"/>
+        <ui:Instance template="item-card"/>
+        <ui:Instance template="item-card"/>
+        <ui:Instance template="item-card"/>
+        <ui:Instance template="item-card"/>
+        <ui:Instance template="item-card"/>
         
     </ui:VisualElement>
 </ui:UXML>

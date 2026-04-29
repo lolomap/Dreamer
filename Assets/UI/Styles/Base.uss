@@ -9,6 +9,10 @@
     justify-content: center;
 }
 
+.hidden {
+    display: none;
+}
+
 .panel-block {
     background-color: white;
     border-radius: 32px;

@@ -1,3 +1,8 @@
+#poetry-mode, #lyrics-mode {
+    /*height: 256px;*/
+    width: 256px;
+}
+
 #poetry-mode #card-icon {
     --unity-image: url('project://database/Assets/Sprites/poetry-icon.svg');
 }
