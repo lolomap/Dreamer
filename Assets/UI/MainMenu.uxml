@@ -1,0 +1,22 @@
+<ui:UXML
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ui="UnityEngine.UIElements"
+         xmlns:uie="UnityEditor.UIElements"
+         xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
+>
+    <ui:Template name="item-card" src="project://database/Assets/UI/Widgets/ItemCard.uxml"/>
+    <ui:Style src="project://database/Assets/UI/Styles/Base.uss" />
+    <ui:Style src="project://database/Assets/UI/Styles/MainMenu.uss" />
+
+    <ui:VisualElement name="main-menu" class="panel-block root center">
+        
+        <ui:Instance name="poetry-mode" template="item-card" class="icon-notebook">
+            <AttributeOverrides element-name="card-text" text="Поэт" />
+        </ui:Instance>
+        
+        <ui:Instance name="lyrics-mode" template="item-card">
+            <AttributeOverrides element-name="card-text" text="Писатель" />
+        </ui:Instance>
+        
+    </ui:VisualElement>
+</ui:UXML>

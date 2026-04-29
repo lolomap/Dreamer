@@ -1,0 +1,8 @@
+.grid > .card {
+    width: 16%;
+}
+
+#card-icon {
+    height: 128px;
+    width: 238px;
+}

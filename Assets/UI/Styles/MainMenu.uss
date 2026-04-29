@@ -1,0 +1,7 @@
+#poetry-mode #card-icon {
+    --unity-image: url('project://database/Assets/Sprites/poetry-icon.svg');
+}
+
+#lyrics-mode #card-icon {
+    --unity-image: url('project://database/Assets/Sprites/lyrics-icon.svg');
+}
