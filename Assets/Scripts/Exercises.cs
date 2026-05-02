@@ -46,6 +46,15 @@ public class Exercises : MonoBehaviour
             _answerInput.RemoveFromClassList("hidden");
             _answersList.AddToClassList("hidden");
         }
+
+        float score = Poetry.Instance.ScoreRhyme("Попросил подвезти меня дружок", "Дал я гари, что покраснел движок");
+        Debug.LogWarning(score);
+        
+        score = Poetry.Instance.ScoreRhyme("Всё погнулось колесо", "Метров пять я носом пропахал песок");
+        Debug.LogWarning(score);
+        
+        score = Poetry.Instance.ScoreRhyme("велит", "инвалид");
+        Debug.LogWarning(score);
     }
 
     private void LoadAnswers()
