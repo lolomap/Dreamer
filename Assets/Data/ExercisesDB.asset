@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8afdc19afa4424f9cee46188d3a020d, type: 3}
   m_Name: ExercisesDB
   m_EditorClassIdentifier: Assembly-CSharp::Data.ExercisesDB
-  DefaultTopic: a-topic
+  DefaultTopic: school-topic
   ExercisesByTopic:
     _serializedList:
-    - Key: a-topic
+    - Key: school-topic
       Value:
       - {fileID: 11400000, guid: 71c270a7137a11b459f4d4959d86ea03, type: 2}

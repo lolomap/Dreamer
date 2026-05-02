@@ -2,6 +2,7 @@
 using Data;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
 
@@ -102,5 +103,6 @@ public class MainMenu : MonoBehaviour
         if (card == null) return;
 
         GameContext.TopicName = card.name;
+        SceneManager.LoadScene("Exercises");
     }
 }

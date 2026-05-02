@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TestExercise
   m_EditorClassIdentifier: Assembly-CSharp::Data.ExerciseSO
   Text: Test exercise text.
+  HasAnswers: 1
   Answers:
   - first
   - second

@@ -1,7 +1,6 @@
 <ui:UXML
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns:ui="UnityEngine.UIElements"
-         xmlns:uie="UnityEditor.UIElements"
          xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
 >
     <ui:Template name="item-card" src="project://database/Assets/UI/Widgets/ItemCard.uxml"/>
@@ -22,16 +21,36 @@
     
     <ui:VisualElement name="select-topic" class="panel-block root center grid hidden">
         
-        <ui:Instance name="a-topic" template="item-card"/> 
-        <ui:Instance name="b-topic" template="item-card"/>
-        <ui:Instance name="c-topic" template="item-card"/>
-        <ui:Instance name="d-topic" template="item-card"/>
-        <ui:Instance name="e-topic" template="item-card"/>
-        <ui:Instance name="f-topic" template="item-card"/>
-        <ui:Instance name="g-topic" template="item-card"/>
-        <ui:Instance name="h-topic" template="item-card"/>
-        <ui:Instance name="i-topic" template="item-card"/>
-        <ui:Instance name="j-topic" template="item-card"/>
+        <ui:Instance name="school-topic" template="item-card">
+            <AttributeOverrides element-name="card-text" text="Школа" />
+        </ui:Instance>
+        <ui:Instance name="new-year-topic" template="item-card">
+            <AttributeOverrides element-name="card-text" text="Новый год" />
+        </ui:Instance>
+        <ui:Instance name="birthday-topic" template="item-card">
+            <AttributeOverrides element-name="card-text" text="День рождения" />
+        </ui:Instance>
+        <ui:Instance name="favorite-toy-topic" template="item-card">
+            <AttributeOverrides element-name="card-text" text="Любимая игрушка" />
+        </ui:Instance>
+        <ui:Instance name="best-friend-topic" template="item-card">
+            <AttributeOverrides element-name="card-text" text="Лучший друг" />
+        </ui:Instance>
+        <ui:Instance name="games-topic" template="item-card">
+            <AttributeOverrides element-name="card-text" text="Игры" />
+        </ui:Instance>
+        <ui:Instance name="summer-topic" template="item-card">
+            <AttributeOverrides element-name="card-text" text="Лето" />
+        </ui:Instance>
+        <ui:Instance name="autumn-topic" template="item-card">
+            <AttributeOverrides element-name="card-text" text="Осень" />
+        </ui:Instance>
+        <ui:Instance name="winter-topic" template="item-card">
+            <AttributeOverrides element-name="card-text" text="Зима" />
+        </ui:Instance>
+        <ui:Instance name="spring-topic" template="item-card">
+            <AttributeOverrides element-name="card-text" text="Весна" />
+        </ui:Instance>
         
     </ui:VisualElement>
 </ui:UXML>
