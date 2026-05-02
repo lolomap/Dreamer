@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ui="UnityEngine.UIElements"
+        xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+        xsi:schemaLocation="../../../UIElementsSchema/UIElements.xsd">
+    <ui:Style src="project://database/Assets/UI/Styles/Header.uss" />
+    
+    <BoxShadowElement box-shadow="0 16 18 0 #394E7F29" class="shadow-header">
+        
+        <ui:VisualElement class="header">
+            <ui:Label text="Фантазёр" />
+        </ui:VisualElement>
+        
+    </BoxShadowElement>
+</ui:UXML>

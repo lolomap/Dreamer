@@ -1,6 +1,4 @@
-﻿using System;
-using Data;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -13,8 +11,7 @@ public class MainMenu : MonoBehaviour
     private VisualElement _selectModePanel;
     private VisualElement _selectTopicPanel;
     
-    private Button _selectPoetryMode;
-    private Button _selectLyricsMode;
+    private Button _toggleMode;
 
     private void OnEnable()
     {
@@ -27,14 +24,9 @@ public class MainMenu : MonoBehaviour
 
         _selectModePanel = _root.Q<VisualElement>("select-mode");
         _selectTopicPanel = _root.Q<VisualElement>("select-topic");
-        _selectModePanel.style.display = DisplayStyle.Flex;
-        _selectTopicPanel.style.display = DisplayStyle.None;
 
-        _selectPoetryMode = _root.Q("poetry-mode").Q<Button>();
-        _selectLyricsMode = _root.Q("lyrics-mode").Q<Button>();
-
-        _selectPoetryMode.RegisterCallback<ClickEvent>(_ => OnPoetry());
-        _selectLyricsMode.RegisterCallback<ClickEvent>(_ => OnLyrics());
+        _toggleMode = _root.Q<Button>("toggle-mode");
+        _toggleMode.RegisterCallback<ClickEvent>(_ => OnModeToggled());
 
         foreach (VisualElement topicCard in _root.Q<VisualElement>("select-topic").Children())
         {
@@ -42,59 +34,24 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    private void OnPoetry()
+    private void OnModeToggled()
     {
-        GameContext.Mode = GameContext.GameMode.Poetry;
-
-        _selectLyricsMode.style.transformOrigin = new TransformOrigin(Length.Percent(50f), Length.Percent(100f));
-        OnModeSelected(_selectPoetryMode, _selectLyricsMode);
-    }
-
-    private void OnLyrics()
-    {
-        GameContext.Mode = GameContext.GameMode.Lyrics;
-        
-        _selectPoetryMode.style.transformOrigin = new TransformOrigin(Length.Percent(50f), Length.Percent(0f));
-        OnModeSelected(_selectLyricsMode, _selectPoetryMode);
-    }
-
-    private void OnModeSelected(VisualElement selected, VisualElement notSelected)
-    {
-        float slideDirection = selected.worldBound.y < notSelected.worldBound.y ? 1f : -1f;
-        
-        selected.experimental.animation
-            .Start(new() {top = slideDirection * selected.resolvedStyle.width / 2f}, 1000)
-            .Ease(Easing.InOutCubic);
-        selected.experimental.animation
-            .Start(Vector3.one, Vector3.one * 1.25f, 1000, (element, value) => { element.style.scale = value; })
-            .Ease(Easing.InOutCubic);
-        
-        notSelected.experimental.animation
-            .Start(Vector3.one, Vector3.zero, 1000, (element, value) => { element.style.scale = value; })
-            .Ease(Easing.InOutCubic)
-            .OnCompleted(ToTopicSelection);
-    }
-    
-    private void ToTopicSelection()
-    {
-        DOTween.Sequence()
-            .AppendInterval(0.75f)
-            .AppendCallback(() =>
+        switch (GameContext.Mode)
+        {
+            case GameContext.GameMode.Poetry:
             {
-                _root.experimental.animation
-                    .Start(Vector3.one, Vector3.zero, 750, (element, value) => { element.style.scale = value; })
-                    .Ease(Easing.InOutCubic)
-                    .OnCompleted(() =>
-                    {
-                        _selectModePanel.style.display = DisplayStyle.None;
-                        _selectTopicPanel.style.display = DisplayStyle.Flex;
-                
-                        _root.experimental.animation
-                            .Start(Vector3.zero, Vector3.one, 750, (element, value) => { element.style.scale = value; })
-                            .Ease(Easing.InOutCubic);
-                    });
-            })
-            .Play();
+                GameContext.Mode = GameContext.GameMode.Lyrics;
+                _toggleMode.text = "Режим: Писатель";
+                break;
+            }
+
+            case GameContext.GameMode.Lyrics:
+            {
+                GameContext.Mode = GameContext.GameMode.Poetry;
+                _toggleMode.text = "Режим: Поэт";
+                break;
+            }
+        }
     }
 
     private static void OnTopicSelected(ClickEvent @event)

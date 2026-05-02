@@ -1,10 +1,8 @@
-.grid > .card {
-    width: 16%;
-}
-
 .card Button {
-    height: 100%;
+    height: 92px;
     width: 100%;
+    font-size: 36px;
+    
 }
 
 .card Button:hover {
@@ -12,5 +10,11 @@
 }
 
 #card-icon {
-    height: 128px;
+    
+}
+
+#card-text {
+    white-space: normal;
+    /*-unity-font-definition: url("/Assets/Fonts/Factor A-Italic-Web.ttf");*/
+    -unity-font-style: italic;
 }
