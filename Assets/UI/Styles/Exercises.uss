@@ -1,0 +1,19 @@
+#exercises > * {
+    margin: 8px;
+}
+
+#exercise-answers-list {
+    flex-direction: row;
+}
+
+#exercise-content {
+    border-color: black;
+    border-width: 1px;
+    
+    width: 64%;
+    height: 32%;
+}
+
+#exercise-answer-input {
+    width: 32%;
+}

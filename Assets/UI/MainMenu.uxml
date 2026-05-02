@@ -8,30 +8,30 @@
     <ui:Style src="project://database/Assets/UI/Styles/Base.uss" />
     <ui:Style src="project://database/Assets/UI/Styles/MainMenu.uss" />
 
-    <ui:VisualElement name="select-mode" class="panel-block root center hidden">
+    <ui:VisualElement name="select-mode" class="panel-block root center">
+        <ui:VisualElement name="select-mode-container">
+            <ui:Instance name="poetry-mode" template="item-card">
+                <AttributeOverrides element-name="card-text" text="Поэт" />
+            </ui:Instance>
         
-        <ui:Instance name="poetry-mode" template="item-card">
-            <AttributeOverrides element-name="card-text" text="Поэт" />
-        </ui:Instance>
-        
-        <ui:Instance name="lyrics-mode" template="item-card">
-            <AttributeOverrides element-name="card-text" text="Писатель" />
-        </ui:Instance>
-        
+            <ui:Instance name="lyrics-mode" template="item-card">
+                <AttributeOverrides element-name="card-text" text="Писатель" />
+            </ui:Instance>
+        </ui:VisualElement>
     </ui:VisualElement>
     
-    <ui:VisualElement name="select-topic" class="panel-block root center grid">
+    <ui:VisualElement name="select-topic" class="panel-block root center grid hidden">
         
-        <ui:Instance template="item-card"/>
-        <ui:Instance template="item-card"/>
-        <ui:Instance template="item-card"/>
-        <ui:Instance template="item-card"/>
-        <ui:Instance template="item-card"/>
-        <ui:Instance template="item-card"/>
-        <ui:Instance template="item-card"/>
-        <ui:Instance template="item-card"/>
-        <ui:Instance template="item-card"/>
-        <ui:Instance template="item-card"/>
+        <ui:Instance name="a-topic" template="item-card"/> 
+        <ui:Instance name="b-topic" template="item-card"/>
+        <ui:Instance name="c-topic" template="item-card"/>
+        <ui:Instance name="d-topic" template="item-card"/>
+        <ui:Instance name="e-topic" template="item-card"/>
+        <ui:Instance name="f-topic" template="item-card"/>
+        <ui:Instance name="g-topic" template="item-card"/>
+        <ui:Instance name="h-topic" template="item-card"/>
+        <ui:Instance name="i-topic" template="item-card"/>
+        <ui:Instance name="j-topic" template="item-card"/>
         
     </ui:VisualElement>
 </ui:UXML>

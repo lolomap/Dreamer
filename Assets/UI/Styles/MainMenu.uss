@@ -1,6 +1,12 @@
-#poetry-mode, #lyrics-mode {
-    /*height: 256px;*/
+#select-mode-container {
+    height: 80%;
     width: 256px;
+    padding: 8px;
+}
+
+#poetry-mode, #lyrics-mode {
+    width: 100%;
+    margin: 8px;
 }
 
 #poetry-mode #card-icon {

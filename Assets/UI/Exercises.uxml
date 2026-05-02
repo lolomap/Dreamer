@@ -1,0 +1,27 @@
+<ui:UXML
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ui="UnityEngine.UIElements"
+         xmlns:uie="UnityEditor.UIElements"
+         xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
+>
+    <ui:Style src="project://database/Assets/UI/Styles/Base.uss" />
+    <ui:Style src="project://database/Assets/UI/Styles/Exercises.uss" />
+
+    <ui:VisualElement name="exercises" class="panel-block root center">
+        <ui:VisualElement name="exercise-content" class="panel-block center">
+            <ui:Label name="exercise-text" text="Здесь текст задания упражнения" binding-path="Text" />
+        </ui:VisualElement>
+        
+        <ui:VisualElement name="exercise-answers-list" class="">
+            <ui:Button text="123" />
+            <ui:Button text="123" />
+            <ui:Button text="123" />
+            <ui:Button text="123" />
+            <ui:Button text="123" />
+        </ui:VisualElement>
+        
+        <ui:TextField name="exercise-answer-input" class="hidden" />
+        
+        <ui:Button text="Далее" />
+    </ui:VisualElement>
+</ui:UXML>
