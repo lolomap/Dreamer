@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00b17a1c2d834a14e8e9e40082737285, type: 3}
-  m_Name: TestExercise
+  m_Name: House
   m_EditorClassIdentifier: Assembly-CSharp::Data.ExerciseSO
-  Text: Test exercise text.
+  Text: "Дом"
   HasAnswers: 1
   Answers:
-  - first
-  - second
-  - third
-  CorrectAnswer: second
+  - "погром"
+  - "дожь"
+  - "гном"
+  CorrectAnswer: "гном"

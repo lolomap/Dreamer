@@ -34,8 +34,9 @@
     -unity-font-style: bold-and-italic;
 }
 
-#exercise-text {
+.main-text {
     align-self: center;
+    align-items: center;
     margin-top: auto;
     margin-bottom: auto;
     

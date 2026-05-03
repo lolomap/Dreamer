@@ -14,4 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Data.ExercisesDB
   DefaultTopic: school-topic
   Exercises:
+  - {fileID: 11400000, guid: ca4e3a2ef9d607d4ca2b4e4b4a3a83d9, type: 2}
   - {fileID: 11400000, guid: 71c270a7137a11b459f4d4959d86ea03, type: 2}
+  - {fileID: 11400000, guid: ebb06c66dc973664cbe05f6962da2062, type: 2}
+  - {fileID: 11400000, guid: b33a34dc5f4fab3478c62d52e04db359, type: 2}
+  - {fileID: 11400000, guid: c4fcd49778ce99a4e993e5d8b56cb805, type: 2}
+  - {fileID: 11400000, guid: 513f09dc27b1b7b4b915566153369627, type: 2}
+  - {fileID: 11400000, guid: 3eae29fa3f19a8a4aacefbc50875581a, type: 2}
+  - {fileID: 11400000, guid: 624fe7d332b35934e9475c3ed5ba262a, type: 2}
+  - {fileID: 11400000, guid: 9ecf2b0129407334685ffcbe0dc56ec3, type: 2}
+  - {fileID: 11400000, guid: 4e59f4f116a37a643866151542253a7a, type: 2}

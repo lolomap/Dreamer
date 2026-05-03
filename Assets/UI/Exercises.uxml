@@ -19,7 +19,10 @@
                 <ui:Label text="Творческое упражнение" class="hint" />
                 <ui:Label text="Подбери рифму к данным словам!" class="hint" />
                 
-                <ui:Label text="Какой-то текст упражнения" name="exercise-text" binding-path="Text" />
+                <ui:VisualElement class="main-text">
+                    <ui:Label name="exercise-text" text="Какой-то текст упражнения" binding-path="Text" />
+                    <ui:Label name="exercise-answer-placeholder" text="_______" binding-path="Answer" />
+                </ui:VisualElement>
                 
                 <ui:VisualElement name="exercise-answers-list" class="center">
                     <ui:Instance template="button" />

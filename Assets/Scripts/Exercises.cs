@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Data;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -14,7 +13,11 @@ public class Exercises : MonoBehaviour
     private VisualElement _root;
     private VisualElement _answersList;
     private TextField _answerInput;
-    
+    private Label _answerPlaceholder;
+
+    private int _correctAnswers;
+    private int _totalAnswers;
+    private bool _failed;
     
     private void Awake()
     {
@@ -28,23 +31,21 @@ public class Exercises : MonoBehaviour
             Debug.LogError("Topic has no exercises");
             return;
         }
-        
-        _exercise = ExercisesDB.Exercises.Random();
 
         _root = GetComponent<UIDocument>().rootVisualElement;
-        _root.Bind(new(_exercise));
         _answersList = _root.Q("exercise-answers-list");
+        _answerPlaceholder = _root.Q<Label>("exercise-answer-placeholder");
         
-        LoadAnswers();
+        RestartExercises();
 
-        float score = Poetry.Instance.ScoreRhyme("Попросил подвезти меня дружок", "Дал я гари, что покраснел движок");
+        /*float score = Poetry.Instance.ScoreRhyme("Попросил подвезти меня дружок", "Дал я гари, что покраснел движок");
         Debug.LogWarning(score);
         
         score = Poetry.Instance.ScoreRhyme("Всё погнулось колесо", "Метров пять я носом пропахал песок");
         Debug.LogWarning(score);
         
         score = Poetry.Instance.ScoreRhyme("велит", "инвалид");
-        Debug.LogWarning(score);
+        Debug.LogWarning(score);*/
     }
 
     private void LoadAnswers()
@@ -71,13 +72,43 @@ public class Exercises : MonoBehaviour
     {
         if (answer == _exercise.CorrectAnswer)
         {
-            Debug.Log("Correct");       
             target.AddToClassList("good-color");
+            _answerPlaceholder.text = answer;
+            
+            if (!_failed)
+                _correctAnswers++;
+            _totalAnswers++;
+            
+            // 
+            
+            if (_correctAnswers >= 3 || _totalAnswers >= 5)
+            {
+                OnFinishExercises();
+            }
+            else
+            {
+                RestartExercises();
+            }
         }
         else
         {
-            Debug.Log("Wrong!");
+            _failed = true;
             target.AddToClassList("bad-color");
         }
+    }
+
+    private void OnFinishExercises()
+    {
+        Debug.Log("Finish ex");
+    }
+
+    private void RestartExercises()
+    {
+        _answerPlaceholder.text = "_______";
+        _failed = false;
+        _exercise = ExercisesDB.Exercises.Random();
+        ExercisesDB.Exercises.Remove(_exercise);
+        _root.Bind(new(_exercise));
+        LoadAnswers();
     }
 }
