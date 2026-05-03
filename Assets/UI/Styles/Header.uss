@@ -8,11 +8,10 @@
     -unity-font-definition: url("/Assets/Fonts/Factor A-Extrabold-Web.ttf");
     -unity-font-style: bold;
     /*visibility: hidden;*/
+    
+    height: 100%;
 }
 
-.shadow-header {
-    /*background-color: rgb(0, 0, 0);*/
-    border-radius: 16px;
-    width: 100%;
+.shadow-static {
     height: 100%;
 }

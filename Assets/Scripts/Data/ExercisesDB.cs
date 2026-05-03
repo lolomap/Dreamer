@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Data
 {
@@ -8,6 +8,6 @@ namespace Data
     public class ExercisesDB : ScriptableObject
     {
         public string DefaultTopic;
-        public SerializedDictionary<string, List<ExerciseSO>> ExercisesByTopic;
+        public List<ExerciseSO> Exercises;
     }
 }

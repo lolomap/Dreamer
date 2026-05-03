@@ -4,16 +4,63 @@
 
 #exercise-answers-list {
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
-#exercise-content {
-    border-color: black;
-    border-width: 1px;
-    
-    width: 64%;
-    height: 32%;
+#exercise-answers-list > * {
+    width: 25%;
+}
+
+#exercise-answers-list Button {
+    border-radius: 16px;
+    font-size: 32px;
+    -unity-font-style: italic;
+}
+
+#exercise-panel {
+    padding: 36px 36px 64px;
 }
 
 #exercise-answer-input {
     width: 32%;
+}
+
+#header {
+    height: 25%;
+}
+
+.hint {
+    font-size: 32px;
+    -unity-font-style: bold-and-italic;
+}
+
+#exercise-text {
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+    font-size: 32px;
+    -unity-font-style: italic;
+}
+
+/*.override-color .btn-box Button {
+    background-color: rgba(0, 0, 0, 0);
+}*/
+
+.good-color #btn {
+    background-color: #87D34C;
+    color: white;
+}
+
+.good-color:hover #btn {
+    background-color: #74C336;
+}
+
+.bad-color #btn {
+    background-color: #EA3117;
+    color: white;
+}
+
+.bad-color:hover #btn {
+    background-color: #D5260E;
 }

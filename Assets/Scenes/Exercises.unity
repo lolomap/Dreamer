@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a8a4cdb9ee4a7ca21dab25fa8f3dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Exercises
+  ButtonPrefab: {fileID: 9197481963319205126, guid: 126a442263ab4ef882189c62eaf9a9d7, type: 3}
   ExercisesDB: {fileID: 11400000, guid: d2c8889133df41841832baedb7cb6026, type: 2}
 --- !u!1 &1130268620
 GameObject:

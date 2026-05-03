@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML class="btn-box"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ui="UnityEngine.UIElements"
+         xmlns:uie="UnityEditor.UIElements"
+         xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <ui:Style src="project://database/Assets/UI/Styles/Base.uss" />
+
+    <BoxShadowElement class="shadow">
+        <ui:Button text="Кнопка" name="btn" class="panel-element border" />
+    </BoxShadowElement>
+</ui:UXML>

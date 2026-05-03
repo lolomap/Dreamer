@@ -7,8 +7,10 @@
 >
     <ui:Style src="project://database/Assets/UI/Styles/ItemCard.uss" />
     
-    <ui:Button class="panel-element">
+    <BoxShadowElement class="shadow" >
+        <ui:Button class="panel-element">
             <ui:Image name="card-icon" />
             <ui:Label name="card-text" text="Имя карточки" />
-    </ui:Button>
+        </ui:Button>
+    </BoxShadowElement>
 </ui:UXML>

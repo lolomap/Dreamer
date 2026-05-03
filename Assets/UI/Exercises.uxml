@@ -1,13 +1,38 @@
-<ui:UXML
+<ui:UXML class="root"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns:ui="UnityEngine.UIElements"
          xmlns:uie="UnityEditor.UIElements"
          xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
 >
+    <ui:Template name="header" src="project://database/Assets/UI/Widgets/Header.uxml" />
+    <ui:Template name="button" src="project://database/Assets/UI/Widgets/Button.uxml" />
     <ui:Style src="project://database/Assets/UI/Styles/Base.uss" />
     <ui:Style src="project://database/Assets/UI/Styles/Exercises.uss" />
 
-    <ui:VisualElement name="exercises" class="panel-block root center">
+    <ui:VisualElement class="sidebar-column" />
+    
+    <ui:VisualElement class="content-column">
+        <ui:Instance name="header" template="header" />
+        
+        <BoxShadowElement class="shadow-static fill" >
+            <ui:VisualElement name="exercise-panel" class="panel-block fill">
+                <ui:Label text="Творческое упражнение" class="hint" />
+                <ui:Label text="Подбери рифму к данным словам!" class="hint" />
+                
+                <ui:Label text="Какой-то текст упражнения" name="exercise-text" binding-path="Text" />
+                
+                <ui:VisualElement name="exercise-answers-list" class="center">
+                    <ui:Instance template="button" />
+                    <ui:Instance template="button" />
+                    <ui:Instance template="button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </BoxShadowElement>
+    </ui:VisualElement>
+    
+    <ui:VisualElement class="sidebar-column" />
+    
+    <!--<ui:VisualElement name="exercises" class="panel-block root center">
         <ui:VisualElement name="exercise-content" class="panel-block center">
             <ui:Label name="exercise-text" text="Здесь текст задания упражнения" binding-path="Text" />
         </ui:VisualElement>
@@ -23,5 +48,5 @@
         <ui:TextField name="exercise-answer-input" class="hidden" />
         
         <ui:Button text="Далее" />
-    </ui:VisualElement>
+    </ui:VisualElement>-->
 </ui:UXML>

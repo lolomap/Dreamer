@@ -20,7 +20,7 @@ public partial class BoxShadowElement : VisualElement
 
     private List<ParsedShadow> m_Shadows = new List<ParsedShadow>();
 
-    [UxmlAttribute]
+    /*[UxmlAttribute]*/
     public string boxShadow
     {
         get => m_BoxShadowString;
@@ -72,6 +72,34 @@ public partial class BoxShadowElement : VisualElement
 
         RegisterCallback<AttachToPanelEvent>(OnAttachToPanel);
         RegisterCallback<GeometryChangedEvent>(OnGeometryChanged);
+        RegisterCallback<CustomStyleResolvedEvent>(OnCustomStyleResolved);
+    }
+    
+    private static readonly CustomStyleProperty<float> s_OffsetX = new("--box-shadow-offset-x");
+    private static readonly CustomStyleProperty<float> s_OffsetY = new("--box-shadow-offset-y");
+    private static readonly CustomStyleProperty<float> s_Blur = new("--box-shadow-blur");
+    private static readonly CustomStyleProperty<float> s_Spread = new("--box-shadow-spread");
+    private static readonly CustomStyleProperty<Color> s_Color = new("--box-shadow-color");
+    private static readonly CustomStyleProperty<bool> s_Inset = new("--box-shadow-inset");
+
+    private void OnCustomStyleResolved(CustomStyleResolvedEvent evt)
+    {
+        if (evt.customStyle.TryGetValue(s_OffsetX, out float ox) &&
+            evt.customStyle.TryGetValue(s_OffsetY, out float oy) &&
+            evt.customStyle.TryGetValue(s_Blur, out float blur) &&
+            evt.customStyle.TryGetValue(s_Spread, out float spread) &&
+            evt.customStyle.TryGetValue(s_Color, out Color color))
+        {
+            bool inset = evt.customStyle.TryGetValue(s_Inset, out bool ins) && ins;
+
+            // Формируем строку: "offsetX offsetY blur spread color [inset]"
+            string colorStr = ColorUtility.ToHtmlStringRGBA(color);
+            string shadowStr = $"{ox:F0} {oy:F0} {blur:F0} {spread:F0} #{colorStr}";
+            if (inset) shadowStr += " inset";
+
+            // Присваиваем – это вызовет парсинг и перерисовку
+            this.boxShadow = shadowStr;
+        }
     }
 
     private void OnAttachToPanel(AttachToPanelEvent evt) => ApplyBlurAndUpdateSize();
@@ -208,9 +236,6 @@ public partial class BoxShadowElement : VisualElement
             painter.BeginPath();
             AddRoundedRect(painter, shadowRect, borderRadius);
             painter.Fill();
-        
-            // Проверяем, был ли нарисован хотя бы один путь
-            Debug.Log("Fill() called");
         }
     }
 

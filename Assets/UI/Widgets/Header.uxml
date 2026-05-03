@@ -6,7 +6,7 @@
         xsi:schemaLocation="../../../UIElementsSchema/UIElements.xsd">
     <ui:Style src="project://database/Assets/UI/Styles/Header.uss" />
     
-    <BoxShadowElement box-shadow="0 16 18 0 #394E7F29" class="shadow-header">
+    <BoxShadowElement class="shadow-static"> <!-- box-shadow="0 16 18 0 #394E7F29" -->
         
         <ui:VisualElement class="header">
             <ui:Label text="Фантазёр" />

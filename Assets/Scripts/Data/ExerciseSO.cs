@@ -8,5 +8,6 @@ namespace Data
         public string Text;
         public bool HasAnswers; 
         public List<string> Answers;
+        public string CorrectAnswer;
     }
 }

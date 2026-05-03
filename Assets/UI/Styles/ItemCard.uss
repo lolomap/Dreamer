@@ -1,20 +1,23 @@
 .card Button {
-    height: 92px;
+    /*height: 92px;*/
     width: 100%;
     font-size: 36px;
     
 }
 
 .card Button:hover {
-    background-color: aquamarine;
+    /*background-color: aquamarine;*/
 }
 
 #card-icon {
-    
+    height: 66%;
+    width: 66%;
+    align-self: center;
 }
 
 #card-text {
     white-space: normal;
     /*-unity-font-definition: url("/Assets/Fonts/Factor A-Italic-Web.ttf");*/
     -unity-font-style: italic;
+    margin-top: auto;
 }

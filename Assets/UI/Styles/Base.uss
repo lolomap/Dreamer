@@ -6,7 +6,7 @@ Label {
 .root {
     height: 100%;
     width: 100%;
-    background-color: #E6E6F7;
+    background-color: #F5F6F7;
     flex-direction: row;
 }
 
@@ -19,6 +19,8 @@ Label {
     width: 100%;
     max-width: 824px;
     flex-direction: column;
+    
+    margin-bottom: 32px;
 }
 
 .content-column > * {
@@ -34,6 +36,15 @@ Label {
     display: none;
 }
 
+.border {
+    border-width: 1px;
+    border-color: black;
+}
+
+.no-border {
+    border-width: 0;
+}
+
 .panel-block {
     background-color: white;
     border-radius: 32px;
@@ -44,6 +55,47 @@ Label {
     border-radius: 16px;
 }
 
-.shade {
-    
+.btn-box .panel-element {
+    background-color: #EAE6FF;
+}
+
+.btn-box .panel-element:hover {
+    background-color: #DDD7FFE5;
+}
+
+.fill {
+    height: 100%;
+    width: 100%;
+}
+
+.background-transparent {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.shadow {
+    --box-shadow-offset-x: 0;
+    --box-shadow-offset-y: 16;
+    --box-shadow-blur: 18;
+    --box-shadow-spread: 0;
+    --box-shadow-color: #394E7F29;
+    --box-shadow-inset: 0; /* false */
+}
+
+
+.shadow-static {
+    --box-shadow-offset-x: 0;
+    --box-shadow-offset-y: 16;
+    --box-shadow-blur: 18;
+    --box-shadow-spread: 0;
+    --box-shadow-color: #394E7F29;
+    --box-shadow-inset: 0; /* false */
+}
+
+.shadow:hover {
+    --box-shadow-offset-x: 0;
+    --box-shadow-offset-y: 18;
+    --box-shadow-blur: 48;
+    --box-shadow-spread: 0;
+    --box-shadow-color: #394E7F33;
+    --box-shadow-inset: 0; /* false */
 }

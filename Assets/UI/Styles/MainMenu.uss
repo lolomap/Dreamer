@@ -17,3 +17,29 @@
     flex-shrink: 0;             /* Запрет на сжатие меньше 33.333% */
     margin: 8px;               /* Имитация отступов */
 }
+
+#poetry-mode #card-icon {
+    --unity-image: url('project://database/Assets/Sprites/poetry-icon.svg');
+}
+
+#lyrics-mode #card-icon {
+    --unity-image: url('project://database/Assets/Sprites/lyrics-icon.svg');
+}
+
+#poetry-mode Button {
+    height: 256px;
+    width: 256px;
+}
+
+#lyrics-mode Button {
+    height: 256px;
+    width: 256px;
+}
+
+#select-mode-container {
+    flex-direction: row;
+}
+
+#select-mode-container > * {
+    margin: 16px;
+}
