@@ -10,6 +10,10 @@ Label {
     flex-direction: row;
 }
 
+#header {
+    height: 25%;
+}
+
 .center {
     align-items: center;
     justify-content: center;
@@ -36,8 +40,12 @@ Label {
     display: none;
 }
 
+.stretch {
+    flex-grow: 1;
+}
+
 .border {
-    border-width: 1px;
+    border-width: 2px;
     border-color: black;
 }
 
@@ -57,10 +65,15 @@ Label {
 
 .btn-box .panel-element {
     background-color: #EAE6FF;
+    white-space: normal;
 }
 
 .btn-box .panel-element:hover {
     background-color: #DDD7FFE5;
+}
+
+.btn-box:hover {
+    scale: 1.1;
 }
 
 .fill {

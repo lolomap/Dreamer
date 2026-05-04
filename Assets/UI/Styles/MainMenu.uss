@@ -3,21 +3,6 @@
     font-size: 36px;
 }
 
-.topic-grid {
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    margin: -8px;
-}
-
-.topic-grid > * {
-    width: 30%;             /* Базовая ширина ~1/3 родителя */
-    flex-grow: 0;               /* Захват доп. пространства */
-    flex-shrink: 0;             /* Запрет на сжатие меньше 33.333% */
-    margin: 8px;               /* Имитация отступов */
-}
-
 #poetry-mode #card-icon {
     --unity-image: url('project://database/Assets/Sprites/poetry-icon.svg');
 }
@@ -38,6 +23,8 @@
 
 #select-mode-container {
     flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 #select-mode-container > * {

@@ -1,0 +1,18 @@
+﻿.topic-grid {
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    /*margin: -8px;*/
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.topic-grid > * {
+    width: 30%;             /* Базовая ширина ~1/3 родителя */
+    height: 128px;
+    margin: 8px;               /* Имитация отступов */
+    
+    font-size: 32px;
+}
+

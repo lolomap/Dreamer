@@ -25,10 +25,6 @@
     width: 32%;
 }
 
-#header {
-    height: 25%;
-}
-
 .hint {
     font-size: 32px;
     -unity-font-style: bold-and-italic;

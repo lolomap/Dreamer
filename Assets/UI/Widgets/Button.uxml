@@ -7,7 +7,7 @@
 >
     <ui:Style src="project://database/Assets/UI/Styles/Base.uss" />
 
-    <BoxShadowElement class="shadow">
-        <ui:Button text="Кнопка" name="btn" class="panel-element border" />
+    <BoxShadowElement class="shadow stretch">
+        <ui:Button text="Кнопка" name="btn" class="panel-element border stretch" />
     </BoxShadowElement>
 </ui:UXML>

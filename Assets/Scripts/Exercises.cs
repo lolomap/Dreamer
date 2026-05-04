@@ -100,6 +100,7 @@ public class Exercises : MonoBehaviour
     private void OnFinishExercises()
     {
         Debug.Log("Finish ex");
+        
     }
 
     private void RestartExercises()

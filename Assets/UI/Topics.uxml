@@ -7,9 +7,9 @@
 >
 
     <ui:Template name="header" src="project://database/Assets/UI/Widgets/Header.uxml" />
-    <ui:Template name="item-card" src="project://database/Assets/UI/Widgets/ItemCard.uxml" />
+    <ui:Template name="button" src="project://database/Assets/UI/Widgets/Button.uxml" />
     <ui:Style src="project://database/Assets/UI/Styles/Base.uss" />
-    <ui:Style src="project://database/Assets/UI/Styles/MainMenu.uss" />
+    <ui:Style src="project://database/Assets/UI/Styles/Topics.uss" />
 
     <ui:VisualElement class="sidebar-column" />
 
@@ -17,35 +17,35 @@
         <ui:Instance template="header" />
 
         <ui:VisualElement name="select-topic" class="center topic-grid">
-            <ui:Instance name="school-topic" template="item-card">
-                <AttributeOverrides element-name="card-text" text="Школа" />
+            <ui:Instance name="school-topic" template="button">
+                <AttributeOverrides element-name="btn" text="Школа" />
             </ui:Instance>
-            <ui:Instance name="new-year-topic" template="item-card">
-                <AttributeOverrides element-name="card-text" text="Новый год" />
+            <ui:Instance name="new-year-topic" template="button">
+                <AttributeOverrides element-name="btn" text="Новый год" />
             </ui:Instance>
-            <ui:Instance name="birthday-topic" template="item-card">
-                <AttributeOverrides element-name="card-text" text="День рождения" />
+            <ui:Instance name="birthday-topic" template="button">
+                <AttributeOverrides element-name="btn" text="День рождения" />
             </ui:Instance>
-            <ui:Instance name="favorite-toy-topic" template="item-card">
-                <AttributeOverrides element-name="card-text" text="Любимая игрушка" />
+            <ui:Instance name="favorite-toy-topic" template="button">
+                <AttributeOverrides element-name="btn" text="Любимая игрушка" />
             </ui:Instance>
-            <ui:Instance name="best-friend-topic" template="item-card">
-                <AttributeOverrides element-name="card-text" text="Лучший друг" />
+            <ui:Instance name="best-friend-topic" template="button">
+                <AttributeOverrides element-name="btn" text="Лучший друг" />
             </ui:Instance>
-            <ui:Instance name="games-topic" template="item-card">
-                <AttributeOverrides element-name="card-text" text="Игры" />
+            <ui:Instance name="games-topic" template="button">
+                <AttributeOverrides element-name="btn" text="Игры" />
             </ui:Instance>
-            <ui:Instance name="summer-topic" template="item-card">
-                <AttributeOverrides element-name="card-text" text="Лето" />
+            <ui:Instance name="summer-topic" template="button">
+                <AttributeOverrides element-name="btn" text="Лето" />
             </ui:Instance>
-            <ui:Instance name="autumn-topic" template="item-card">
-                <AttributeOverrides element-name="card-text" text="Осень" />
+            <ui:Instance name="autumn-topic" template="button">
+                <AttributeOverrides element-name="btn" text="Осень" />
             </ui:Instance>
-            <ui:Instance name="winter-topic" template="item-card">
-                <AttributeOverrides element-name="card-text" text="Зима" />
+            <ui:Instance name="winter-topic" template="button">
+                <AttributeOverrides element-name="btn" text="Зима" />
             </ui:Instance>
-            <ui:Instance name="spring-topic" template="item-card">
-                <AttributeOverrides element-name="card-text" text="Весна" />
+            <ui:Instance name="spring-topic" template="button">
+                <AttributeOverrides element-name="btn" text="Весна" />
             </ui:Instance>
         </ui:VisualElement>
     </ui:VisualElement>

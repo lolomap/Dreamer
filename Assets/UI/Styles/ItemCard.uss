@@ -2,11 +2,15 @@
     /*height: 92px;*/
     width: 100%;
     font-size: 36px;
-    
+    background-color: #EAE6FF;
 }
 
 .card Button:hover {
-    /*background-color: aquamarine;*/
+    background-color: #DDD7FFE5;
+}
+
+.card:hover {
+    scale: 1.1;
 }
 
 #card-icon {

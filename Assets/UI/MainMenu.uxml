@@ -11,9 +11,9 @@
     <ui:VisualElement class="sidebar-column" />
     
     <ui:VisualElement class="content-column">
-        <ui:Instance template="header" />
+        <ui:Instance template="header" name="header" />
         
-        <ui:VisualElement name="select-mode" class="root center">
+        <ui:VisualElement name="select-mode" class="center fill">
             <ui:VisualElement name="select-mode-container">
                 <ui:Instance name="poetry-mode" template="item-card">
                     <AttributeOverrides element-name="card-text" text="Поэт" />
