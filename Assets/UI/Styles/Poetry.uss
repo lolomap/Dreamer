@@ -1,0 +1,35 @@
+﻿#task-panel {
+    padding: 36px 36px 64px;
+}
+
+.hint {
+    font-size: 32px;
+    -unity-font-style: bold-and-italic;
+    white-space: normal;
+}
+
+#unity-text-input {
+    background-color: #EAE6FF;
+    border-radius: 16px;
+    border-width: 0;
+    font-size: 28px;
+    -unity-font-style: italic;
+}
+
+.task-ready {
+    margin-top: auto;
+}
+
+.task-ready Button {
+    font-size: 32px;
+    -unity-font-style: italic;
+}
+
+.primary-color #btn {
+    background-color: #765FDE;
+    color: white;
+}
+
+.primary-color:hover #btn {
+    background-color: #634AD6;
+}

@@ -1,8 +1,12 @@
 ﻿using System.Linq;
 using Data;
+using DG.Tweening;
+using Events;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using Zenject;
 
 public class Exercises : MonoBehaviour
 {
@@ -18,6 +22,8 @@ public class Exercises : MonoBehaviour
     private int _correctAnswers;
     private int _totalAnswers;
     private bool _failed;
+
+    [Inject] private EventBus _eventBus;
     
     private void Awake()
     {
@@ -37,15 +43,6 @@ public class Exercises : MonoBehaviour
         _answerPlaceholder = _root.Q<Label>("exercise-answer-placeholder");
         
         RestartExercises();
-
-        /*float score = Poetry.Instance.ScoreRhyme("Попросил подвезти меня дружок", "Дал я гари, что покраснел движок");
-        Debug.LogWarning(score);
-        
-        score = Poetry.Instance.ScoreRhyme("Всё погнулось колесо", "Метров пять я носом пропахал песок");
-        Debug.LogWarning(score);
-        
-        score = Poetry.Instance.ScoreRhyme("велит", "инвалид");
-        Debug.LogWarning(score);*/
     }
 
     private void LoadAnswers()
@@ -78,29 +75,34 @@ public class Exercises : MonoBehaviour
             if (!_failed)
                 _correctAnswers++;
             _totalAnswers++;
-            
-            // 
-            
-            if (_correctAnswers >= 3 || _totalAnswers >= 5)
-            {
-                OnFinishExercises();
-            }
-            else
-            {
-                RestartExercises();
-            }
+
+            DOTween.Sequence()
+                .AppendCallback(() => { _eventBus.BubbleShow.RaiseEvent(ExercisesDB.Bubbles.Success.Random()); })
+                .AppendInterval(2f)
+                .AppendCallback(() =>
+                {
+                    if (_correctAnswers >= 3 || _totalAnswers >= 5)
+                    {
+                        OnFinishExercises();
+                    }
+                    else
+                    {
+                        RestartExercises();
+                    }
+                })
+                .Play();
         }
         else
         {
             _failed = true;
+            _eventBus.BubbleShow.RaiseEvent(ExercisesDB.Bubbles.Failed.Random());
             target.AddToClassList("bad-color");
         }
     }
 
     private void OnFinishExercises()
     {
-        Debug.Log("Finish ex");
-        
+        SceneManager.LoadScene("Topics");
     }
 
     private void RestartExercises()

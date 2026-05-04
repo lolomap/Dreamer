@@ -1,0 +1,76 @@
+﻿.character-wrapper {
+    position: absolute;
+    width: 186px;
+    height: 272px;
+    
+    left: 64px;
+    bottom: 16px;
+    
+    overflow: visible;
+    transition: translate 0.02s linear; /* плавное перемещение */
+}
+
+.character-part {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#character-body {
+    width: 186px;
+    height: 272px;
+    background-image: url("/Assets/Sprites/character-body.svg");
+}
+
+#left-hand {
+    width: 73px;
+    height: 55px;
+    background-image: url("/Assets/Sprites/character-right-hand.svg");
+    top: 70px;   /* пример: плечо */
+    left: -50px; /* выступает влево */
+    transform-origin: 90% 50%; /* pivot для вращения */
+}
+
+#right-hand {
+    width: 62px;
+    height: 66px;
+    background-image: url("/Assets/Sprites/character-left-hand.svg");
+    top: 90px;
+    right: -35px; /* выступает вправо */
+    transform-origin: 10% 50%;
+}
+
+#left-leg {
+    width: 43px;
+    height: 60px;
+    background-image: url("/Assets/Sprites/character-right-leg.svg");
+    bottom: 8px;
+    left: 50px; /* примерное положение тазобедренного сустава */
+    transform-origin: 50% 0%;
+}
+
+#right-leg {
+    width: 46px;
+    height: 65px;
+    background-image: url("/Assets/Sprites/character-left-leg.svg");
+    bottom: 6px;
+    right: 50px;
+    transform-origin: 50% 0%;
+}
+
+#character-bubble {
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    top: 32px;
+    height: 75%;
+    margin: 0;
+    font-size: 42px;
+}
+
+#character-bubble Label {
+    margin: 32px;
+    -unity-font-style: italic;
+    white-space: normal;
+}

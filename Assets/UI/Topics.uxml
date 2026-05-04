@@ -10,8 +10,22 @@
     <ui:Template name="button" src="project://database/Assets/UI/Widgets/Button.uxml" />
     <ui:Style src="project://database/Assets/UI/Styles/Base.uss" />
     <ui:Style src="project://database/Assets/UI/Styles/Topics.uss" />
+    <Style src="project://database/Assets/UI/Styles/Character.uss?fileID=7433441132597879392&amp;guid=62be489e45a146b7923f2562d13b191c&amp;type=3#Character"/>
 
-    <ui:VisualElement class="sidebar-column" />
+    <ui:VisualElement class="sidebar-column">
+        <BoxShadowElement name="character-bubble" class="shadow-static">
+            <ui:VisualElement class="panel-block fill border">
+                <ui:Label text="Многа текста ааааааааааааааааааааа" />
+            </ui:VisualElement>
+        </BoxShadowElement>
+        <ui:VisualElement name="character-container" class="character-wrapper">
+            <ui:VisualElement name="left-hand" class="character-part" style="translate: 67px 69px;"/>
+            <ui:VisualElement name="right-hand" class="character-part" style="translate: -27px 18px;"/>
+            <ui:VisualElement name="right-leg" class="character-part" style="translate: 19px 3px;"/>
+            <ui:VisualElement name="character-body" class="character-part"/>
+            <ui:VisualElement name="left-leg" class="character-part" style="translate: 6px 3px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
 
     <ui:VisualElement class="content-column">
         <ui:Instance template="header" />

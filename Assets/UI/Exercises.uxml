@@ -1,55 +1,40 @@
-<ui:UXML class="root"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:ui="UnityEngine.UIElements"
-         xmlns:uie="UnityEditor.UIElements"
-         xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
->
-    <ui:Template name="header" src="project://database/Assets/UI/Widgets/Header.uxml" />
-    <ui:Template name="button" src="project://database/Assets/UI/Widgets/Button.uxml" />
-    <ui:Style src="project://database/Assets/UI/Styles/Base.uss" />
-    <ui:Style src="project://database/Assets/UI/Styles/Exercises.uss" />
-
-    <ui:VisualElement class="sidebar-column" />
-    
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" class="root">
+    <ui:Template name="button" src="project://database/Assets/UI/Widgets/Button.uxml?fileID=9197481963319205126&amp;guid=126a442263ab4ef882189c62eaf9a9d7&amp;type=3#Button"/>
+    <ui:Template name="header" src="project://database/Assets/UI/Widgets/Header.uxml?fileID=9197481963319205126&amp;guid=dd319f0ba2f84ee494adfbf735674d50&amp;type=3#Header"/>
+    <Style src="project://database/Assets/UI/Styles/Base.uss?fileID=7433441132597879392&amp;guid=cf3e1b60063325a46844e7e295b02e57&amp;type=3#Base"/>
+    <Style src="project://database/Assets/UI/Styles/Exercises.uss?fileID=7433441132597879392&amp;guid=def3b749415143a6bd30eca576f34b28&amp;type=3#Exercises"/>
+    <Style src="project://database/Assets/UI/Styles/Character.uss?fileID=7433441132597879392&amp;guid=62be489e45a146b7923f2562d13b191c&amp;type=3#Character"/>
+    <ui:VisualElement class="sidebar-column">
+        <BoxShadowElement name="character-bubble" class="shadow-static">
+            <ui:VisualElement class="panel-block fill border">
+                <ui:Label text="Многа текста ааааааааааааааааааааа" />
+            </ui:VisualElement>
+        </BoxShadowElement>
+        <ui:VisualElement name="character-container" class="character-wrapper">
+            <ui:VisualElement name="left-hand" class="character-part" style="translate: 67px 69px;"/>
+            <ui:VisualElement name="right-hand" class="character-part" style="translate: -27px 18px;"/>
+            <ui:VisualElement name="right-leg" class="character-part" style="translate: 19px 3px;"/>
+            <ui:VisualElement name="character-body" class="character-part"/>
+            <ui:VisualElement name="left-leg" class="character-part" style="translate: 6px 3px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
     <ui:VisualElement class="content-column">
-        <ui:Instance name="header" template="header" />
-        
-        <BoxShadowElement class="shadow-static fill" >
+        <ui:Instance name="header" template="header"/>
+        <BoxShadowElement class="shadow-static fill">
             <ui:VisualElement name="exercise-panel" class="panel-block fill">
-                <ui:Label text="Творческое упражнение" class="hint" />
-                <ui:Label text="Подбери рифму к данным словам!" class="hint" />
-                
+                <ui:Label text="Творческое упражнение" class="hint"/>
+                <ui:Label text="Подбери рифму к данным словам!" class="hint"/>
                 <ui:VisualElement class="main-text">
-                    <ui:Label name="exercise-text" text="Какой-то текст упражнения" binding-path="Text" />
-                    <ui:Label name="exercise-answer-placeholder" text="_______" binding-path="Answer" />
+                    <ui:Label name="exercise-text" text="Какой-то текст упражнения" binding-path="Text"/>
+                    <ui:Label name="exercise-answer-placeholder" text="_______" binding-path="Answer"/>
                 </ui:VisualElement>
-                
                 <ui:VisualElement name="exercise-answers-list" class="center">
-                    <ui:Instance template="button" />
-                    <ui:Instance template="button" />
-                    <ui:Instance template="button" />
+                    <ui:Instance template="button"/>
+                    <ui:Instance template="button"/>
+                    <ui:Instance template="button"/>
                 </ui:VisualElement>
             </ui:VisualElement>
         </BoxShadowElement>
     </ui:VisualElement>
-    
-    <ui:VisualElement class="sidebar-column" />
-    
-    <!--<ui:VisualElement name="exercises" class="panel-block root center">
-        <ui:VisualElement name="exercise-content" class="panel-block center">
-            <ui:Label name="exercise-text" text="Здесь текст задания упражнения" binding-path="Text" />
-        </ui:VisualElement>
-        
-        <ui:VisualElement name="exercise-answers-list" class="">
-            <ui:Button text="123" />
-            <ui:Button text="123" />
-            <ui:Button text="123" />
-            <ui:Button text="123" />
-            <ui:Button text="123" />
-        </ui:VisualElement>
-        
-        <ui:TextField name="exercise-answer-input" class="hidden" />
-        
-        <ui:Button text="Далее" />
-    </ui:VisualElement>-->
+    <ui:VisualElement class="sidebar-column"/>
 </ui:UXML>

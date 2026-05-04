@@ -1,16 +1,88 @@
 ﻿using System.Linq;
-using Nestor.Poetry;
+using Data;
+using DG.Tweening;
+using Events;
+using UnityEditor.UIElements;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+using UnityEngine.UIElements;
+using Zenject;
 
-public class Poetry
+public class Poetry : MonoBehaviour
 {
-    private static Poetry _instance;
-    public static Poetry Instance => _instance ??= new();
+    public VisualTreeAsset TextFieldPrefab;
 
-    private readonly RhymeAnalyzer _analyzer = new();
+    private VisualElement _root;
+    private VisualElement _inputsList;
 
-    public float ScoreRhyme(string line1, string line2)
+    [Inject] private EventBus _eventBus;
+
+    private void Awake()
     {
-        RhymingPair pair = _analyzer.ScoreRhyme(line1.Split(' ').Last(), line2.Split(' ').Last());
-        return (float)pair.Score;
+        _root = GetComponent<UIDocument>().rootVisualElement;
+        _inputsList = _root.Q("task-write");
+
+        AddTextField();
+    }
+
+    /// <summary>
+    /// Создаёт новый экземпляр поля ввода и добавляет его в контейнер.
+    /// </summary>
+    private VisualElement AddTextField()
+    {
+        VisualElement element = TextFieldPrefab.Instantiate();
+        element.AddToClassList("text-field");
+
+        TextField textField = element.Q<TextField>();
+        if (textField == null)
+        {
+            Debug.LogError("TextField не найден внутри шаблона!");
+            return null;
+        }
+
+        // Подписываемся на изменение текста, передавая сам element для контекста
+        textField.RegisterValueChangedCallback(evt => OnTextFieldValueChanged(evt, element));
+
+        _inputsList.Add(element);
+        return element;
+    }
+
+    /// <summary>
+    /// Обработчик изменения текста в любом поле.
+    /// Добавляет новое пустое поле, если в последнем появляется текст.
+    /// Удаляет последнее пустое поле, если предпоследнее становится пустым.
+    /// </summary>
+    private void OnTextFieldValueChanged(ChangeEvent<string> evt, VisualElement fieldElement)
+    {
+        int index = _inputsList.IndexOf(fieldElement);
+        if (index < 0) return; // элемент уже удалён (защита)
+
+        string currentText = evt.newValue;
+
+        // Если это последний элемент и в нём есть текст → добавляем новое пустое поле
+        if (index == _inputsList.childCount - 1)
+        {
+            if (!string.IsNullOrEmpty(currentText))
+            {
+                AddTextField(); // добавится в конец, и подписка будет у него
+            }
+        }
+        // Если это предпоследний элемент и его текст стал пустым → возможно, нужно удалить последнее поле
+        else if (index == _inputsList.childCount - 2)
+        {
+            if (string.IsNullOrEmpty(currentText))
+            {
+                // Проверяем, что последний элемент существует и его текст тоже пуст
+                var lastElement = _inputsList.ElementAt(_inputsList.childCount - 1);
+                var lastTextField = lastElement?.Q<TextField>();
+                if (lastTextField != null && string.IsNullOrEmpty(lastTextField.value))
+                {
+                    // Удаляем последний пустой элемент
+                    _inputsList.RemoveAt(_inputsList.childCount - 1);
+                    // Отписка от событий не требуется — элемент уничтожится при удалении
+                }
+            }
+        }
     }
 }

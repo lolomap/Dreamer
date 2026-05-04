@@ -1,10 +1,14 @@
 ﻿using System;
+using Events;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Zenject;
 
 public class Topics : MonoBehaviour
 {
     private VisualElement _root;
+
+    [Inject] private EventBus _eventBus;
     
     private void OnEnable()
     {
@@ -14,6 +18,11 @@ public class Topics : MonoBehaviour
         {
             topicCard.Q<Button>().RegisterCallback<ClickEvent>(OnTopicSelected);
         }
+    }
+
+    private void Start()
+    {
+        _eventBus.BubbleShow.RaiseEvent("Теперь выбери тему для творческого задания!");
     }
 
     private static void OnTopicSelected(ClickEvent @event)
