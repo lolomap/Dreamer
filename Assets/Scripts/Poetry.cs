@@ -1,11 +1,7 @@
-﻿using System.Linq;
-using Data;
-using DG.Tweening;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Events;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using Zenject;
 
@@ -15,6 +11,9 @@ public class Poetry : MonoBehaviour
 
     private VisualElement _root;
     private VisualElement _inputsList;
+    private Button _readyBtn;
+
+    private string _poem;
 
     [Inject] private EventBus _eventBus;
 
@@ -22,8 +21,25 @@ public class Poetry : MonoBehaviour
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
         _inputsList = _root.Q("task-write");
+        _readyBtn = _root.Q("task-ready").Q<Button>();
+
+        _readyBtn.clicked += OnReady;
 
         AddTextField();
+    }
+
+    private void OnReady()
+    {
+        _poem = "";
+        
+        foreach (VisualElement visualElement in _inputsList.Children().Where(element => element.GetClasses().Contains("text-field")))
+        {
+            TextField field = visualElement.Q<TextField>();
+
+            _poem += field.text + "\n";
+        }
+
+        PoetryLogic.Instance.ScorePoem(_poem);
     }
 
     /// <summary>

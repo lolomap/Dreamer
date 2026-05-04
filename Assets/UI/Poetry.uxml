@@ -31,7 +31,7 @@
                     
                 </ui:VisualElement>
                 
-                <ui:Instance template="button" class="task-ready primary-color">
+                <ui:Instance name="task-ready" template="button" class="task-ready primary-color">
                     <ui:AttributeOverrides element-name="btn" text="Готово!" />
                 </ui:Instance>
                 
