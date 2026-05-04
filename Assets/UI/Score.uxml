@@ -1,11 +1,10 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False" class="root">
     <ui:Template name="button" src="project://database/Assets/UI/Widgets/Button.uxml?fileID=9197481963319205126&amp;guid=126a442263ab4ef882189c62eaf9a9d7&amp;type=3#Button"/>
     <ui:Template name="header" src="project://database/Assets/UI/Widgets/Header.uxml?fileID=9197481963319205126&amp;guid=dd319f0ba2f84ee494adfbf735674d50&amp;type=3#Header"/>
-    <ui:Template name="keyword" src="/Assets/UI/Widgets/Keyword.uxml" />
-    <ui:Template name="text-field" src="/Assets/UI/Widgets/TextField.uxml" />
+    
     <Style src="project://database/Assets/UI/Styles/Base.uss?fileID=7433441132597879392&amp;guid=cf3e1b60063325a46844e7e295b02e57&amp;type=3#Base"/>
     <Style src="project://database/Assets/UI/Styles/Character.uss?fileID=7433441132597879392&amp;guid=62be489e45a146b7923f2562d13b191c&amp;type=3#Character"/>
-    <ui:Style src="/Assets/UI/Styles/Poetry.uss" />
+    <ui:Style src="/Assets/UI/Styles/Score.uss" />
     <ui:VisualElement class="sidebar-column">
         <BoxShadowElement name="character-bubble" class="shadow-static">
             <ui:VisualElement class="panel-block fill border">
@@ -23,27 +22,31 @@
     
     <ui:VisualElement class="content-column">
         <ui:Instance name="header" template="header"/>
+        
         <BoxShadowElement class="shadow-static fill">
-            <ui:VisualElement name="task-panel" class="panel-block fill">
+            <ui:VisualElement name="score-panel" class="panel-block fill">
                 
-                <ui:VisualElement name="task-keywords-preview" class="hidden">
-                    <ui:Label text="Напиши стихотворение самостоятельно!" class="hint" />
-                    <!--<ui:Instance template="keyword" />-->
+                <ui:Label text="Время оценить твою работу!" class="hint" />
+                <ui:Label text="Оценка рифмы от программы:" class="hint" />
+                
+                <ui:VisualElement name="ai-stars" class="star-row">
+                    <ui:Button class="star-no" />
+                    <ui:Button class="star-no" />
+                    <ui:Button class="star-no" />
                 </ui:VisualElement>
                 
-                <ui:VisualElement name="task-write" class="hidden">
-                    <ui:Label text="Напиши стихотворение самостоятельно!" class="hint" />
-                    
-                    
+                <ui:Label text="А теперь пускай родители оценят твой стих!" />
+                
+                <ui:VisualElement name="user-stars" class="star-row">
+                    <ui:Button class="star" />
+                    <ui:Button class="star" />
+                    <ui:Button class="star" />
+                    <ui:Button class="star" />
+                    <ui:Button class="star-no" />
                 </ui:VisualElement>
                 
-                <ui:VisualElement name="loading" class="fill center">
-                    <ui:Image name="spinner" />
-                    <ui:Label text="Считаю оценку..." class="hint" />
-                </ui:VisualElement>
-                
-                <ui:Instance name="task-ready" template="button" class="task-ready primary-color">
-                    <ui:AttributeOverrides element-name="btn" text="Готово!" />
+                <ui:Instance template="button" name="back" class="primary-color">
+                    <ui:AttributeOverrides element-name="btn" text="Вернуться в меню" />
                 </ui:Instance>
                 
             </ui:VisualElement>

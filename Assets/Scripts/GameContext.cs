@@ -11,4 +11,8 @@ public static class GameContext
 
     public static GameMode Mode;
     public static string TopicName;
+
+    public static int Score;
+
+    public static KeywordChecker KeywordChecker;
 }

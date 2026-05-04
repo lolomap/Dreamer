@@ -5,6 +5,7 @@ namespace Data
     [CreateAssetMenu(fileName = "TopicsDB", menuName = "Tasks/TopicsDB", order = -1000)]
     public class TopicsDB : ScriptableObject
     {
+        public string DefaultTopic;
         public List<TopicSO> Topics;
     }
 }

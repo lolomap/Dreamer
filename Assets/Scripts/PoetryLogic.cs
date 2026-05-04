@@ -10,7 +10,7 @@ public class PoetryLogic
     public static PoetryLogic Instance => _instance ??= new();
 
     private readonly RhymeAnalyzer _rhymeAnalyzer = new();
-    private readonly FootAnalyser _footAnalyzer = new();
+    /*private readonly FootAnalyser _footAnalyzer = new();*/
 
     public float ScoreRhyme(string line1, string line2)
     {
@@ -142,8 +142,8 @@ public class PoetryLogic
             rhymeQuality = 3;
 
         // --- Шаг 5 (опционально): определение размера для информации ---
-        Foot foot = _footAnalyzer.FindBestFootByPoem(poem);
-        Debug.Log($"Размер стихотворения: {foot.Type}");
+        /*Foot foot = _footAnalyzer.FindBestFootByPoem(poem);
+        Debug.Log($"Размер стихотворения: {foot.Type}");*/
 
         // --- Вывод результатов ---
         Debug.Log($"Количество рифмованных пар: {pairsCount}");

@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
 
     private void OnEnable()
     {
+        GameContext.KeywordChecker = new();
+        
         _root = GetComponent<UIDocument>().rootVisualElement;
         if (_root == null)
         {

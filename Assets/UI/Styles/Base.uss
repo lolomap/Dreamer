@@ -44,6 +44,14 @@ Label {
     flex-grow: 1;
 }
 
+#keyword {
+    font-size: 28px;
+    -unity-font-style: bold-and-italic;
+    -unity-text-align: middle-center;
+    padding: 8px;
+    background-color: #EAE6FF;
+}
+
 .border {
     border-width: 2px;
     border-color: black;

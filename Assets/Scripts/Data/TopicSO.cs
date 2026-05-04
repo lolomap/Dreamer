@@ -6,6 +6,6 @@ namespace Data
     public class TopicSO : ScriptableObject
     {
         public string Name;
-        public List<string> Keywords;
+        public List<string> Keywords = new();
     }
 }

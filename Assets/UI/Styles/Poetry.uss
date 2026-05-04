@@ -33,3 +33,37 @@
 .primary-color:hover #btn {
     background-color: #634AD6;
 }
+
+#task-keywords-preview {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#task-keywords-preview > * {
+    margin: 16px;
+}
+
+#keywords-panel {
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    top: 32px;
+    height: 100%;
+    width: 80%;
+    margin: 0;
+    font-size: 42px;
+}
+
+#keywords-panel .keyword-panel {
+    margin-bottom: 16px;
+}
+
+#loading Image {
+    --unity-image: url("/Assets/Sprites/spinner.svg");
+    height: 256px;
+    width: 256px;
+    
+    
+}

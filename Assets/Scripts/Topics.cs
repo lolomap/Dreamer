@@ -1,6 +1,7 @@
 ﻿using System;
 using Events;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Zenject;
 
@@ -27,9 +28,10 @@ public class Topics : MonoBehaviour
 
     private static void OnTopicSelected(ClickEvent @event)
     {
-        VisualElement card = (@event.target as Button)?.parent;
+        VisualElement card = (@event.target as Button)?.parent.parent;
         if (card == null) return;
 
         GameContext.TopicName = card.name;
+        SceneManager.LoadScene("Poetry");
     }
 }

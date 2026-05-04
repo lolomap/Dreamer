@@ -2,7 +2,6 @@
 using Data;
 using DG.Tweening;
 using Events;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -111,7 +110,8 @@ public class Exercises : MonoBehaviour
         _failed = false;
         _exercise = ExercisesDB.Exercises.Random();
         ExercisesDB.Exercises.Remove(_exercise);
-        _root.Bind(new(_exercise));
+        //_root.Bind(new(_exercise));
+        _root.Q<Label>("exercise-text").text = _exercise.Text;
         LoadAnswers();
     }
 }

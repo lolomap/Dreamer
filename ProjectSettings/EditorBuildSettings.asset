@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Topics.unity
     guid: 0a048e94d50cc9546a9d27699427d79c
+  - enabled: 1
+    path: Assets/Scenes/Poetry.unity
+    guid: 471d210e9ec5a5b4fb7c7a6dfc2c897f
+  - enabled: 1
+    path: Assets/Scenes/ResultScene.unity
+    guid: 98a81c387a907ae448da04fb5a892d47
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

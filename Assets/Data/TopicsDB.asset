@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2e5f041d1b44608b5ea102c2c9ec74, type: 3}
   m_Name: TopicsDB
   m_EditorClassIdentifier: Assembly-CSharp::Data.TopicsDB
+  DefaultTopic: school-topic
   Topics:
   - {fileID: 11400000, guid: 055afe72831cabd44892f6d69031c829, type: 2}
   - {fileID: 11400000, guid: c08b9e36949c3564792070dd5d6ffd98, type: 2}

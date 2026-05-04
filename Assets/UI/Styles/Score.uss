@@ -1,0 +1,57 @@
+﻿#score-panel {
+    padding: 36px 36px 64px;
+}
+
+.hint {
+    font-size: 32px;
+    -unity-font-style: bold;
+    white-space: normal;
+}
+
+
+.task-ready {
+    margin-top: auto;
+}
+
+.task-ready Button {
+    font-size: 32px;
+    -unity-font-style: italic;
+}
+
+.primary-color #btn {
+    background-color: #765FDE;
+    color: white;
+}
+
+.primary-color:hover #btn {
+    background-color: #634AD6;
+}
+
+.star-row {
+    flex-direction: row;
+}
+
+.star {
+    background-image: url("/Assets/Sprites/star.svg");
+    background-color: rgba(0, 0, 0, 0);
+    width: 98px;
+    height: 98px;
+    border-width: 0;
+}
+
+.star-no {
+    background-image: url("/Assets/Sprites/star-no.svg");
+    background-color: rgba(0, 0, 0, 0);
+    width: 98px;
+    height: 98px;
+    border-width: 0;
+}
+
+.content-column {
+    font-size: 32px;
+}
+
+#back {
+    margin-top: auto;
+    font-size: 32px;
+}
